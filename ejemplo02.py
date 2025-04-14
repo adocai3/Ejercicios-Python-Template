@@ -1,41 +1,52 @@
 # coding=utf-8
-__Author__="José Gaspar Sánchez García"
+__author__ = "Adonis Gramaje Victoria"
 from bs4 import BeautifulSoup
-import requests, webbrowser
+import requests
 
 # Programa principal
 def main():
-    print("Web Scrapping con Beatiful Soap")
-    print(30*"=")
-    url="https://www.elmundo.es/quijote/capitulo.html?cual=1";
-    print("Abriendo página web {0} en una nueva pestaña.".format(url))
-    webbrowser.open_new_tab(url)
-    print("WEB SCRAPPING")
-    print(30*"=")
+    print("Web Scrapping con BeautifulSoup")
+    print("=" * 30)
 
+    url = "https://www.elmundo.es/quijote/capitulo.html?cual=1"
     
-    resultado=requests.get(url)
-    html=resultado.text;
+    print("Accediendo a la página:", url)
+    
+    # Hacer la solicitud HTTP a la página
+    resultado = requests.get(url)
+    
+    if resultado.status_code == 200:
+        html = resultado.text
+    else:
+        print("Error al obtener la página:", resultado.status_code)
+        return
+    
+    print("WEB SCRAPPING")
+    print("=" * 30)
 
-    sopa=BeautifulSoup(html)
-    print(sopa.prettify())
+    # Usar BeautifulSoup para parsear el HTML
+    sopa = BeautifulSoup(html, 'html.parser')
+    
+    # Prettify para mostrar el HTML formateado
+    # print(sopa.prettify())  # Si quieres ver todo el HTML, descomenta esta línea
 
-    texto=sopa.find('div',id='contenido').get_text()
+    # Extraer el contenido del div con id 'contenido'
+    texto = sopa.find('div', id='contenido').get_text()
 
-
-    txt=texto.replace("Prólogo","").replace("Capítulo II","").replace("<","").replace(">","")
+    # Limpiar el texto
+    txt = texto.replace("Prólogo", "").replace("Capítulo II", "")
 
     print(txt)
 
     # Guardamos el texto en un fichero
-
-    nombreFichero=input("Introduzca el nombre del fichero a guardar: ")
-    with open(nombreFichero,'w') as fichero :
+    nombreFichero = input("Introduzca el nombre del fichero a guardar: ")
+    
+    with open(nombreFichero, 'w', encoding='utf-8') as fichero:
         fichero.write("Don Quijote de la Mancha:\n")
-        fichero.write(50*"="+"\n")
+        fichero.write("=" * 50 + "\n")
         fichero.write(txt)
-        fichero.close()
-    print("El fichero "+nombreFichero+" ha sido escrito.")
+    
+    print("El fichero", nombreFichero, "ha sido escrito.")
 
-if __name__== "__main__" :
-   main()
+if __name__ == "__main__":
+    main()
