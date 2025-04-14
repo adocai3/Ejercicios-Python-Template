@@ -1,5 +1,5 @@
 # coding=utf-8
-__Author__ = "José Gaspar Sánchez García"
+__Author__ = "Adonis Gramaje Victoria"
 
 # Función que determina si un número es primo
 def esPrimo(numero):
