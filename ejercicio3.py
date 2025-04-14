@@ -31,18 +31,20 @@ def obtenerCalificacion(nota):
 
 # Programa principal
 def main():
-    try:
-        # Solicitar la nota
-        n = float(input("Introduzca la nota (0 a 10): "))
+    while True:
+        try:
+            # Solicitar la nota
+            n = float(input("Introduzca la nota (0 a 10): "))
 
-        # Validar si la nota está dentro del rango permitido
-        if 0 <= n <= 10:
-            print("Calificación:", obtenerCalificacion(n))
-        else:
-            print("Error: La nota debe estar entre 0 y 10.")
-    
-    except ValueError:
-        print("Error: Debe introducir un número válido para la nota.")
+            # Validar si la nota está dentro del rango permitido
+            if 0 <= n <= 10:
+                print("Calificación:", obtenerCalificacion(n))
+                break  # Salir del bucle si la entrada es válida
+            else:
+                print("Error: La nota debe estar entre 0 y 10.")
+        
+        except ValueError:
+            print("Error: Debe introducir un número válido para la nota.")
 
 # Llamar a la función principal
 if __name__ == "__main__":
