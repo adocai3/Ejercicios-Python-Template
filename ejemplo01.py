@@ -13,8 +13,8 @@ def main():
     
     print("¡Hola {0} {1}!".format(nombre, apellidos))
     print("MAYÚSCULAS: {0}".format(nombre.upper()))
-    print("nombre en minúsculas: " + nombre.lower())
-
+    print("nombre en minúsculas: {0}".format(nombre.lower()))  # Usamos el formato consistente
+    
     print("MANEJO DE PÁGINAS WEB")
     print("=" * 30)
     
