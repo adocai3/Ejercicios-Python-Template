@@ -1,19 +1,18 @@
-# This Python file uses the following encoding: utf-8
-import os, sys
-# Comentario en Python
+# Este archivo de Python utiliza la codificación: utf-8
+import os
+import sys
+
 # Autor: José Gaspar Sánchez García
 
-# Funcion en Python
-
+# Funciones en Python
 def uno():
-    return 1;
-def zero():
-    return 0;
+    return 1
+
+def cero():
+    return 0
 
 def saludar():
-    return "Hola mundo";
-
-
+    return "Hola mundo"
 
 # Programa Principal
 print(saludar())
