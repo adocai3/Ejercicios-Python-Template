@@ -68,4 +68,5 @@ def main():
     else:
         print(f"¡{nombre2} GANA!")
 
-if __
+if __name__ == "__main__":
+    main()
