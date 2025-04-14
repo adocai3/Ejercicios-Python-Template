@@ -1,5 +1,5 @@
 # coding=utf-8
-__Author__ = "José Gaspar Sánchez García"
+__Author__ = "Adonis Gramaje Victoria"
 
 import random
 
