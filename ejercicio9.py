@@ -1,49 +1,28 @@
 # coding=utf-8
-__Author__="José Gaspar Sánchez García"
+__Author__ = "Adonis Gramaje Victoria"
 
-def suma(x,y) :
-    return x
+# Funciones de operaciones matemáticas
+def suma(x, y):
+    return x + y
 
-def resta(x,y) :
-    return x
+def resta(x, y):
+    return x - y
 
-def multiplica(x,y) :
-    return x
+def multiplica(x, y):
+    return x * y
 
-def divide(x,y) :
-    return y
+def divide(x, y):
+    if y == 0:
+        return "Error: División por cero"
+    else:
+        return x / y
 
-# Función que crea el menú de la aplicacion.
-
-def menuApp() :
+# Función que crea el menú de la aplicación.
+def menuApp():
     print("MENU CALCULADORA")
-    opcion =-1
+    opcion = -1
 
-    while opcion !=0 :
-        print("1. Suma")
+    while opcion != 0:
+        print("\n1. Suma")
         print("2. Resta")
-        print("3. Multiplicación")
-        print("4. División")
-        print("0. Salir")
-
-        opcion=int(input("Introduzca opción: "))
-
-        if opcion == 1 :
-            s1=int(input("Introduzca el primer sumando: "))
-            s2=int(input("Introduzca el segundo sumando: "))
-            print("La suma de {0} + {1} = {2}.".format(s1,s2,suma(s1,s2)))
-        elif opcion == 2 :
-            minuendo=int(input("Introduzca el minuendo: "))
-            sustraendo=int(input("Introduzca el sustraendo: "))
-            print("La resta de {0} - {1} = {2}.".format(minuendo,sustraendo,resta(minuendo,sustraendo)))
-       # --> Completa el código fuente del programa <-- 
-        elif opcion !=0 :
-            print("Error: Opción incorrecta, introduzca una nueva opción.")
-
-# Programa principal
-def main():
-    menuApp()
-    
-
-if __name__== "__main__" :
-   main()
+        print
