@@ -34,15 +34,4 @@ def main():
 
     tirada = 1
     while numeroTirada > 0:
-        print(f"\nTirada nº {tirada}:")
-        j1 = random.choice(["piedra", "papel", "tijera"])
-        j2 = random.choice(["piedra", "papel", "tijera"])  # corregido
-
-        print(f"{nombre1} ha sacado {j1}.")
-        print(f"{nombre2} ha sacado {j2}.")
-
-        ganador = quienGana(j1, j2)
-
-        if ganador == 0:
-            print("Han empatado.")
-        elif ganador ==
+        print(f"\nTirada nº {tirada}:
