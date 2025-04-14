@@ -24,11 +24,21 @@ def generarPares(valores, inicio):
 
 # Programa principal para probar la función
 def main():
-    cantidad = int(input("¿Cuántos números pares deseas generar? "))
-    inicio = int(input("¿Desde qué número deseas empezar? "))
+    try:
+        # Pedimos al usuario la cantidad de números pares que desea generar
+        cantidad = int(input("¿Cuántos números pares deseas generar? "))
+        # Pedimos al usuario desde qué número debe comenzar la generación
+        inicio = int(input("¿Desde qué número deseas empezar? "))
 
-    pares = generarPares(cantidad, inicio)
-    print("Números pares generados:", pares)
+        # Llamamos a la función para generar los números pares
+        pares = generarPares(cantidad, inicio)
 
+        # Mostramos los números pares generados
+        print("Números pares generados:", pares)
+    
+    except ValueError:
+        print("Por favor, ingresa un número válido.")
+
+# Llamada a la función principal para ejecutar el programa
 if __name__ == "__main__":
     main()
