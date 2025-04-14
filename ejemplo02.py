@@ -31,7 +31,15 @@ def main():
     # print(sopa.prettify())  # Si quieres ver todo el HTML, descomenta esta línea
 
     # Extraer el contenido del div con id 'contenido'
-    texto = sopa.find('div', id='contenido').get_text()
+    contenido_div = sopa.find('div', id='contenido')
+
+    # Si no se encuentra el div, mostramos un error y terminamos el programa
+    if not contenido_div:
+        print("No se encontró el div con id 'contenido'.")
+        return
+    
+    # Extraemos el texto
+    texto = contenido_div.get_text()
 
     # Limpiar el texto
     txt = texto.replace("Prólogo", "").replace("Capítulo II", "")
@@ -46,7 +54,7 @@ def main():
         fichero.write("=" * 50 + "\n")
         fichero.write(txt)
     
-    print("El fichero", nombreFichero, "ha sido escrito.")
+    print(f"El fichero '{nombreFichero}' ha sido escrito.")
 
 if __name__ == "__main__":
     main()
