@@ -35,4 +35,38 @@ def main():
     tirada = 1
     while numeroTirada > 0:
         print(f"\nTirada nº {tirada}:")
-        j1
+        j1 = random.choice(["piedra", "papel", "tijera"])
+        j2 = random.choice(["piedra", "papel", "tijera"])
+
+        print(f"{nombre1} ha sacado {j1}.")
+        print(f"{nombre2} ha sacado {j2}.")
+
+        ganador = quienGana(j1, j2)
+
+        if ganador == 0:
+            print("Han empatado.")
+        elif ganador == 1:
+            ganadas1 += 1
+            print(f"Gana {nombre1}. Número de tiradas ganadas --> {ganadas1}")
+        elif ganador == 2:
+            ganadas2 += 1
+            print(f"Gana {nombre2}. Número de tiradas ganadas --> {ganadas2}")
+        else:
+            print("Error.")
+
+        numeroTirada -= 1
+        tirada += 1
+
+    # Resultado final de todas las tiradas
+    print("\nRESUMEN FINAL:")
+    print(f"{nombre1} --> {ganadas1} victorias.")
+    print(f"{nombre2} --> {ganadas2} victorias.")
+    if ganadas1 == ganadas2:
+        print("HAN EMPATADO.")
+    elif ganadas1 > ganadas2:
+        print(f"¡{nombre1} GANA!")
+    else:
+        print(f"¡{nombre2} GANA!")
+
+if __name__ == "__main__":
+    main()
